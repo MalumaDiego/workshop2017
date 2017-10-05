@@ -8,19 +8,12 @@
                                     <a href="index.html">
                                         <i class="fa fa-home"></i> Catalogos </a>
                                 </li>
-                                <li class="@yield('menu_manager','')">
+                                <li class="@yield('menu_provider','')">
                                     <a href="">
-                                        <i class="fa fa-th-large"></i> Items Manager
+                                        <i class="fa fa-th-large"></i> Proveedores
                                         <i class="fa arrow"></i>
                                     </a>
-                                    <ul class="sidebar-nav">
-                                        <li>
-                                            <a href="items-list.html"> Items List </a>
-                                        </li>
-                                        <li>
-                                            <a href="item-editor.html"> Item Editor </a>
-                                        </li>
-                                    </ul>
+                                    
                                 </li>
                                 <li>
                                     <a href="">

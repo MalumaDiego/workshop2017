@@ -13,7 +13,14 @@ class Provider extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('providers', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->integer('telefono');
+            $table->string('direccion');
+            $table->string('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class Provider extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('providers');
     }
 }
