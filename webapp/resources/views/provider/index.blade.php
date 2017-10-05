@@ -5,7 +5,9 @@
 @section('title-description', 'Administracion de Proveedores ')
 
 @section('content')
+
     <section class="section">
+        <a href="provider/create"><button class="btn btn-success">NUEVO</button> </a>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -17,13 +19,26 @@
                             <td>Telefono</td>
                             <td>Direccion</td>
                             <td>Descripcion</td>
-
                         </tr>
                         </thead>
+                        @foreach($providers as $cat)
+                        <tr>
+                            <td>{{ $cat->id}}</td>
+                            <td>{{ $cat->name}}</td>
+                            <td>{{ $cat->telefono}}</td>
+                            <td>{{ $cat->direccion}}</td>
+                            <td>{{ $cat->description}}</td>
+                            <td>
+                                <a href=""><button class="btn btn-info">EDITAR</button> </a>
+                                <a href=""><button class="btn btn-danger">Eliminar</button> </a>
+                            </td>
+                        </tr>
+                        @endforeach
                         <tbody>
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
     </section>

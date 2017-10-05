@@ -356,5 +356,6 @@
         <script src="js/app-template.js"></script>
         <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/main2.js"></script>
     </body>
 </html>

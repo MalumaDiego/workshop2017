@@ -30,13 +30,18 @@ class ProviderController extends Controller
         //
            if ($request)
            {
-               $query=trim($request->get('searchText'));
-               $providers = DB::table('providers')-> where ('name','LIKE','%'.$query.'%')
-               ->orderBy('id','desc')
-               ->limit(2);
-               return view ('provider.index',["providers" =>$providers , "searhText"=>$query]);
+               //$query=trim($request->get('searchText'));
+               $providers = DB::table('providers')->get();
+
+               return view ('provider.index',["providers" =>$providers ]);
            }
     }
+    public function indexDataTable()
+    {
+        $providerList = Provider::all();
+        return response()->json($providerList);
+    }
+
 
     /**
      * Show the form for creating a new resource.
