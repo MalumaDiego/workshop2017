@@ -150,7 +150,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/modularcode/modular-admin-html">
+                                    <a href="{{asset('https://github.com/modularcode/modular-admin-html')}}">
                                         <i class="fa fa-github-alt"></i> Theme Docs </a>
                                 </li>
                             </ul>

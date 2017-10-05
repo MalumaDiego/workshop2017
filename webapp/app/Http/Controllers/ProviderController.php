@@ -60,16 +60,16 @@ class ProviderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProviderFormRequest $request)
     {
         //
         $provider = new Provider;
-        $provider -> name = $request -> get ('name ');
-        $provider -> telefono = $request -> get ('telefono ');
-        $provider -> direccion = $request -> get ('direccion ');
-        $provider -> descripcion = $request -> get ('descripcion ');
+        $provider -> name = $request -> name;
+        $provider -> telefono = $request -> telefono;
+        $provider -> direccion = $request -> direccion;
+        $provider -> description = $request ->description;
         $provider -> save();
-        return Redirect:: to ('provider');
+        return redirect('provider');
 
     }
 

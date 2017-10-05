@@ -6,10 +6,10 @@
         <title> Workshop 2017 - @yield('title') </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="{{asset('apple-touch-icon.png')}}">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="{{asset('//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/vendor.css')}}">
         <!-- Theme initialization -->
         <script>
             var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -44,7 +44,7 @@
                         </form>
                     </div>
                     <div class="header-block header-block-buttons">
-                        <a href="https://github.com/modularcode/modular-admin-html" class="btn btn-sm header-btn">
+                        <a href="{{asset('https://github.com/modularcode/modular-admin-html" class="btn btn-sm header-btn')}}">
                             <i class="fa fa-github-alt"></i>
                             <span>View on GitHub</span>
                         </a>
@@ -352,10 +352,11 @@
                 <div class="color-secondary"></div>
             </div>
         </div>
-        <script src="js/vendor.js"></script>
-        <script src="js/app-template.js"></script>
-        <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/main2.js"></script>
+
+        <script src="{{asset('js/vendor.js')}}"></script>
+        <script src="{{asset('js/app-template.js')}}"></script>
+        <script src="{{asset('//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('js/main.js')}}"></script>
+        <script src="{{asset('js/main2.js')}}"></script>
     </body>
 </html>

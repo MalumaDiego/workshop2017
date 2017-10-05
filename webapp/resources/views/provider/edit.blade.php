@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('menu_provider', 'open active')
-@section('title', 'Registro Proveedores ')
+@section('title', 'Editar Proveedores ')
 @section('title-description', 'Administracion de Proveedores ')
 @section ('content')
     <div class="row">
@@ -17,7 +17,7 @@
             @endif
 
             {{ Form::open(array('url'=>'provider','method'=>'POST','autocomplete'=>'off'))}}
-             {{Form::token()}}
+            {{Form::token()}}
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" class="form-control" placeholder="name">
@@ -39,8 +39,8 @@
                 <button class="btn btn-danger" type="reset">Cancelar</button>
             </div>
 
-             {{Form::close()}}
+            {{Form::close()}}
 
-</div>
-</div>
+        </div>
+    </div>
 @endsection

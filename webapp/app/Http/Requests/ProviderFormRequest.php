@@ -24,7 +24,7 @@ class ProviderFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required | max:50',
+            'name'=> ' max:50',
             'telefono'=> 'required ',
             'direccion'=> 'required',
             'description'=> 'max:250',

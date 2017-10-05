@@ -14,12 +14,11 @@ class Provider extends Model
      public $timestamps = true;
 
      protected $fillable = [
+
          'name',
          'telefono',
          'direccion',
          'description'
-
-
      ];
 
 }
