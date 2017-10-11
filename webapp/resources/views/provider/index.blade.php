@@ -7,7 +7,12 @@
 @section('content')
 
     <section class="section">
-        <a href="provider/create"><button class="btn btn-success">NUEVO</button> </a>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <a href="provider/create"><button class="btn btn-success">NUEVO</button> </a>
+                @include('provider.search')
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
