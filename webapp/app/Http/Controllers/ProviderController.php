@@ -34,18 +34,7 @@ class ProviderController extends Controller
                 ->paginate(2);
 
             return view ('provider.index',["providers" =>$providers ,"searchText"=>$query]);
-
-
-
-
-
-
-            $query=trim($request->searchText);
-            $categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
-                ->where ('condicion','=','1')
-                ->orderBy('idcategoria','desc')
-                ->paginate(7);
-            return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
+            
         }
 
     }

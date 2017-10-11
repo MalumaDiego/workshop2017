@@ -24,10 +24,10 @@ class ProviderFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> ' max:50',
+            'name'=> ' required',
             'telefono'=> 'required ',
             'direccion'=> 'required',
-            'description'=> 'max:250',
+            'description'=> 'required',
 
             //
         ];

@@ -19,19 +19,19 @@
             {{ Form::open(array('url'=>'provider','method'=>'POST','autocomplete'=>'off'))}}
              {{Form::token()}}
             <div class="form-group">
-                <label for="name">Nombre</label>
+                <label for="name">Nombre * </label>
                 <input type="text" name="name" class="form-control" placeholder="name">
             </div>
             <div class="form-group">
-                <label for="telefono">Telefono</label>
+                <label for="telefono">Telefono *</label>
                 <input type="text" name="telefono" class="form-control" placeholder="telefono">
             </div>
             <div class="form-group">
-                <label for="direccion">Direccion</label>
+                <label for="direccion">Direccion * </label>
                 <input type="text" name="direccion" class="form-control" placeholder="direccion">
             </div>
             <div class="form-group">
-                <label for="description">Descripción</label>
+                <label for="description">Descripción * </label>
                 <input type="text" name="description" class="form-control" placeholder="description">
             </div>
             <div class="form-group">
