@@ -10,10 +10,6 @@ use illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProviderFormRequest;
 use DB;
 
-
-
-
-
 class ProviderController extends Controller
 {
     /**
@@ -27,14 +23,15 @@ class ProviderController extends Controller
     }
     public function index(Request $request)
     {
-        //
-           if ($request)
-           {
-               //$query=trim($request->get('searchText'));
-               $providers = DB::table('providers')->get();
 
-               return view ('provider.index',["providers" =>$providers ]);
-           }
+        if ($request)
+        {
+            //$query=trim($request->get('searchText'));
+            $providers = DB::table('providers')->get();
+
+            return view ('provider.index',["providers" =>$providers ]);
+        }
+
     }
     public function indexDataTable()
     {
@@ -48,7 +45,7 @@ class ProviderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
         return view ("provider.create");
@@ -94,7 +91,7 @@ class ProviderController extends Controller
     public function edit($id)
     {
         //
-        return view ("provider.show", ["provider"=> Provider::findOrFail($id)]);
+        return view ("provider.edit", ["provider"=> Provider::findOrFail($id)]);
     }
 
     /**
@@ -104,16 +101,16 @@ class ProviderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProviderFormRequest $request, $id)
     {
         //
         $provider = Provider::findOrFail($id);
-        $provider -> name = $request ->get('name');
-        $provider -> telefono = $request -> get ('telefono ');
-        $provider -> direccion = $request -> get ('direccion ');
-        $provider -> descripcion = $request -> get ('descripcion ');
+        $provider -> name = $request ->name;
+        $provider -> telefono = $request -> telefono ;
+        $provider -> direccion = $request -> direccion;
+        $provider -> description = $request -> description;
         $provider -> update();
-        return Redirect::to('provider');
+        return redirect('provider');
 
     }
 
@@ -132,3 +129,4 @@ class ProviderController extends Controller
         return Redirect::to('provider');
     }
 }
+

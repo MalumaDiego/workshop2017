@@ -16,7 +16,7 @@ class Provider extends Migration
         Schema::create('providers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->integer('telefono');
+            $table->string('telefono');
             $table->string('direccion');
             $table->string('description');
             $table->timestamps();

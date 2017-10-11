@@ -21,18 +21,18 @@
                             <td>Descripcion</td>
                         </tr>
                         </thead>
-                        @foreach($providers as $cat)
-                        <tr>
-                            <td>{{ $cat->id}}</td>
-                            <td>{{ $cat->name}}</td>
-                            <td>{{ $cat->telefono}}</td>
-                            <td>{{ $cat->direccion}}</td>
-                            <td>{{ $cat->description}}</td>
-                            <td>
-                                <a href=""><button class="btn btn-info">EDITAR</button> </a>
-                                <a href=""><button class="btn btn-danger">Eliminar</button> </a>
-                            </td>
-                        </tr>
+                        @foreach($providers as $provider)
+                            <tr>
+                                <td>{{ $provider->id}}</td>
+                                <td>{{ $provider->name}}</td>
+                                <td>{{ $provider->telefono}}</td>
+                                <td>{{ $provider->direccion}}</td>
+                                <td>{{ $provider->description}}</td>
+                                <td>
+                                    <a href="{{URL::action('ProviderController@edit',$provider->id)}}"><button class="btn btn-info">EDITAR</button> </a>
+                                    <a href=""><button class="btn btn-danger">Eliminar</button> </a>
+                                </td>
+                            </tr>
                         @endforeach
                         <tbody>
                         </tbody>

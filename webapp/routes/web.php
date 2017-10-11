@@ -24,3 +24,4 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
 Route::resource('/provider', 'ProviderController');
 Route::get('/provider/dataTable', 'ProviderController@indexDataTable');
+Route::get('/provider/create', 'ProviderController@create');
