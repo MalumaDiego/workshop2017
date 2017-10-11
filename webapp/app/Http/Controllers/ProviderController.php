@@ -26,8 +26,9 @@ class ProviderController extends Controller
 
         if ($request)
         {
-            //$query=trim($request->get('searchText'));
-            $providers = DB::table('providers')->get();
+            /*$query=trim($request->get('searchText'));
+            $providers = DB::table('providers')->get();*/
+            $providers = DB::table('providers')->paginate(3);
 
             return view ('provider.index',["providers" =>$providers ]);
         }
