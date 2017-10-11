@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Provider extends Model
 {
 
-  /*   protected $table = 'providers';
+   protected $table = 'providers';
 
      protected $primaryKey ='id';
 
@@ -21,6 +21,6 @@ class Provider extends Model
          'description'
      ];
 
-  */
+
 }
 

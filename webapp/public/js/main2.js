@@ -2,7 +2,7 @@
  * Created by DIEGO ALEJANDRO on 5/10/2017.
  */
 $(document).ready(function() {
-    $('#mainTable').DataTable({
+    $('#mainTable2').DataTable({
         ajax: {
             url: '/provider/dataTable',
             dataSrc: ''

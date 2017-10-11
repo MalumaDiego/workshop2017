@@ -30,16 +30,17 @@
                                 <td>{{ $provider->description}}</td>
                                 <td>
                                     <a href="{{URL::action('ProviderController@edit',$provider->id)}}"><button class="btn btn-info">EDITAR</button> </a>
-                                    <a href=""><button class="btn btn-danger">Eliminar</button> </a>
+                                    <a href="" data-target="#modal-delete-{{$provider->id}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
                                 </td>
+                                @include('provider.modal')
                             </tr>
+
                         @endforeach
                         <tbody>
                         </tbody>
                     </table>
                 </div>
-
-
+                {{$providers->render()}}
             </div>
         </div>
     </section>

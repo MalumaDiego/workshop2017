@@ -28,7 +28,7 @@ class ProviderController extends Controller
         {
             /*$query=trim($request->get('searchText'));
             $providers = DB::table('providers')->get();*/
-            $providers = DB::table('providers')->paginate(3);
+            $providers = DB::table('providers')->paginate(2);
 
             return view ('provider.index',["providers" =>$providers ]);
         }
@@ -37,7 +37,7 @@ class ProviderController extends Controller
     public function indexDataTable()
     {
         $providerList = Provider::all();
-        return response()->json($providerList);
+        return database()->json($providerList);
     }
 
 
@@ -125,9 +125,8 @@ class ProviderController extends Controller
     {
         //
         $provider =Provider::findOrFail($id);
-        $provider -> condition='0';
-        $provider -> update();
-        return Redirect::to('provider');
+        $provider -> delete();
+        return redirect('provider');
     }
 }
 
