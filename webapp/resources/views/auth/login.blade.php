@@ -39,14 +39,29 @@
                     </div> ModularAdmin </h1>
             </header>
             <div class="auth-content">
-                <p class="text-center">LOGIN TO CONTINUE</p>
-                <form id="login-form" action="/index.html" method="GET" novalidate="">
-                    <div class="form-group">
+                <p class="text-center">INICIO DE SESION</p>
+                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label for="username">Username</label>
-                        <input type="email" class="form-control underlined" name="username" id="username" placeholder="Your email address" required> </div>
-                    <div class="form-group">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control underlined" name="password" id="password" placeholder="Your password" required> </div>
+                        <input id="password" type="password" class="form-control" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
                     <div class="form-group">
                         <label for="remember">
                             <input class="checkbox" id="remember" type="checkbox">
