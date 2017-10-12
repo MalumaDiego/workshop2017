@@ -34,7 +34,7 @@ class ProviderController extends Controller
                 ->paginate(2);
 
             return view ('provider.index',["providers" =>$providers ,"searchText"=>$query]);
-            
+
         }
 
     }
